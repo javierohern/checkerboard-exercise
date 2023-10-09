@@ -11,12 +11,15 @@ for (let i = 0; i < 8; i++) {
 
     tile.style.width = "12.5%";
     tile.style.height = "12.5%";
-    if ((i + j) % 2 === 0) {
-      tile.style.backgroundColor = "black";
-    } else {
-      tile.style.backgroundColor = "red";
-    }
+    tile.style.backgroundColor = getRandomColor();
     container.appendChild(tile);
   }
 }
 document.body.append(container);
+
+function getRandomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${b}, ${g})`;
+}
